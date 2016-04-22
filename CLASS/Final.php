@@ -7,7 +7,7 @@
   public function getPDO(){
   
   
-    $pdo = new PDO("dbname=offre_emploi;host=localhost","root","");
+    $pdo = new PDO("dbname=offreEmploi;host=localhost","root","");
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     $this->pdo = $pdo;
     return $pdo;

@@ -1,27 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src = 'js/jquery.js'></script>
+<script src = 'js/js-jquery-1.7.2.min.js'></script>
 <script src = 'js/code.js'></script>
+<link rel="stylesheet" type ="text/css" href="bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-<section>
-  <form name = 'f1' action = 'verif_donnees.php' method = 'post'>
-   <b>Entrer votre nom* : </b> <input type 'text' name = 'nom' id = 'nom'><span id = 'erreurNom'></span><br/><br/>
-    <b>Entrer votre prenom* : </b><input type = 'text' name = 'prenom' id = 'prenom'><span id = 'erreurPrenom'></span><br/><br/>
-    <b>Entrer votre date de naissance* : </b><input type = 'text' name = 'dateNaiss' id = 'dateNaiss'><span id = 'erreurDateNaiss'></span><br/><br/>
-    <b>Choisir un nom d'utilisateur* : </b><input type = 'text' name = 'login' id = 'login'><span id = 'erreurLogin'></span><br/><br/>
-    <b>Choisir une mot de passe* : </b><input type = 'password' name = 'password' id = 'password'><span id = 'erreurPassword'></span><br/><br/>
-    <b>Comfirmer votre mot de passe* : </b><input type = 'password' name = 'comfirmation' id = 'comfirmation'><span id = 'erreurComfirmation'></span><br/><br/>
-    <b>Vous allez inscrire en tant que* : </b><select name = 'nature' id = 'nature'>
-      <option value = '0'></option>
-      <option value = 'condidat'>Condidat</option>
-      <option value = 'recruteur'>Recruteur</option>
-    </select><span id = 'erreurNature'></span><br/><br/>
-    <input type = 'submit' name = 'inscrire' id = 'inscrire' value = "s'inscrire">
-    <input type = 'reset' name = 'annuler' id = 'annuler' value = 'annuler'><br/><br/>
-    
-  </form>
+<section class = 'container'>
+
+
+                <?php
+      
+                      require "Autoloader.php";
+      
+                      Autoloader::register();
+        
+                        $gdf = new GenerateurDuFormulaire();
+        
+                            echo $gdf->form("f1","verifDonnees.php","post");
+          
+                                  echo "<b class='span3'>Entrer votre nom* : </b>".$gdf->input("text","nom","nom")."<span id = 'erreurNom'></span><br/><br/>";
+                                  echo "<b class='span3'>Entrer votre prenom* : </b>".$gdf->input("text","prenom","prenom")."<span id = 'erreurPrenom'></span><br/><br/>";
+                                  echo "<b class='span3'>Entrer votre date de naissance* : </b>".$gdf->input("text","dateNaiss","dateNaiss")."<span id = 'erreurDateNaiss'></span><br/><br/>";
+                                  echo "<b class='span3'>Choisir un nom d'utilisateur* : </b>".$gdf->input("text","login","login")."<span id = 'erreurLogin'></span><br/><br/>";
+                                  echo "<b class='span3'>Choisir une mot de passe* : </b>".$gdf->input("password","password","password")."<span id = 'erreurPassword'></span><br/><br/>";
+                                  echo "<b class='span3'>Comfirmer votre mot de passe* : </b>".$gdf->input("password","comfirmer","comfirmer")."<span id = 'erreurComfirmation'></span><br/><br/>";
+                                  echo "<b class='span3'>Vous allez inscrire en tant que* : </b>";
+            
+                                  echo $gdf->select("nature","nature");
+        
+                                        echo $gdf->option(0,"");
+                                        echo $gdf->option("candidat","Candidat");
+                                        echo $gdf->option("recruteur","Recruteur");
+              
+                                  echo $gdf->endSelect()."<span id = 'erreurNature'></span><br/><br/>";
+              
+                                  echo $gdf->submit("inscrire","inscrire","sinscrire")." ";
+                                  echo $gdf->reset("annuler","annuler","annuler")."<br/><br/>";
+            
+            
+                            echo $gdf->endForm();
+          
+          
+    ?>
+            
 </section>
 </body>
 </html>
