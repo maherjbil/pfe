@@ -18,7 +18,12 @@
         
             if($compte->modifierOuSupprimerCompte("DELETE FROM candidat WHERE idCandidat = ".$compte->getId())){
 
-                  echo "Votre compte a ete supprimer Voulez-vous <a href = 'inscrire.php'>creer un nouveau compte</a>";
+                  header("location:formulaireDeModificationDuCompteCandidat.php?resultSuppression=ok");
+
+            }
+            else{
+
+                  header("location:formulaireDeModificationDuCompteCandidat.php?resultSuppression=false");
 
             }
             
@@ -28,7 +33,12 @@
         
               if($compte->modifierOuSupprimerCompte("DELETE FROM recruteur WHERE idRecruteur = ".$compte->getId())){
 
-                  echo "Votre compte a ete supprimer Voulez-vous <a href = 'inscrire.php'>creer un nouveau compte</a>";
+                  header("location:formulaireDeModificationDuCompteRecruteur.php?resultSuppression=ok");
+
+            }
+            else{
+
+                  header("location:formulaireDeModificationDuCompteRecruteur.php?resultSuppression=false");
 
             }
         

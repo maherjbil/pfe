@@ -1,0 +1,798 @@
+/*debut de la page inscriptionEmployer et inscriptionEntreprise*/
+body{
+
+    background-color:white;
+
+}
+nav.navbar-fixed-top{
+
+    background:#ffffff;
+    margin-bottom:70px;
+
+}
+button.toggle{
+
+    width:50px;
+    height:40px;
+    margin:5px;
+    padding:5px 10px 5px 10px;
+
+}
+button.toggle span.icon-bar{
+
+    width:30px;
+    height:10px;
+    background-color:green;
+
+
+}
+.logo img{
+
+    width: 70px;
+    height: 70px;
+
+}
+.navbar-right li a{
+
+    color:#16a085;
+
+}
+
+.navbar-right{
+
+    margin-top:5px;
+    margin-bottom:5px;
+    
+
+}
+.navbar-right li{
+
+    padding-top:5px;
+    padding-bottom:5px;
+
+}
+.navbar-right li a{
+   
+   border-left:1px solid #b8baba;
+   border-right:1px solid #b8baba; 
+
+}
+.navbar-right li.active{
+
+    border-right:1px solid #b8baba;
+
+}
+
+/*debut de header*/
+
+.background-header{
+
+    margin-bottom:20px;
+
+}
+
+/*fin de header*/
+
+/*debaut de section*/
+section.inscription{
+
+    background-color:white;
+
+}
+.titre-inscription{
+
+    color:#12a085;
+    font-style:TWCENMT;
+    border-bottom:1px solid black;
+    margin-bottom:50px;
+
+}
+.titre-compte-candidat{
+
+    font-weight:Semibold;
+    font-family:Segoe UI;
+    margin-bottom:50px;
+
+}
+.row .col-md-2 .hr{
+
+    color:black;
+    font-weight:bold;
+    height:2em;
+
+}
+section .formulaire-inscription{
+
+    background-color:#ebfceb;
+    padding-bottom:50px;
+
+}
+
+/*fin se section*/
+
+footer.container-fluid{
+
+    background-color:#faf8f8;
+    margin-top:50px;
+
+}
+footer.container-fluid .container .row .col-md-3{
+
+    margin-bottom:50px;
+
+}
+div.fonts i{
+
+    color:#16a085;
+
+}
+.bande{
+
+    background-color:#ebfceb;
+
+}
+.fa,.glyphicon{
+
+    color:#159f85;
+
+}
+.icon-white{
+
+    color:white;
+
+}
+.champs-inscription input{
+
+    border-radius:0px;
+    border:1px solid #12a085;
+
+}
+/*fin des pages inscriptionEmployer et inscriptionEntreprise*/
+
+/*debut de la page completerInscription*/
+
+
+
+/*fin ce la page completerInscription*/
+
+/*page afficherAnnonce.php*/
+
+.container-fluid .aside{
+
+    margin-bottom:70px;
+
+}
+
+
+div .titre-details-annonce{
+
+    background-color:#16a085;
+    color:#ffffff;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-family: Myriad Pro;
+    font-style:Regular;
+
+}
+div.content-details-annonces{
+
+    background-color:#fbfbfb;
+    border:1px solid #16a085;
+    padding:20px 10px 20px 20px;
+    line-height:2em;
+    margin-bottom:20px;
+
+}
+div.description-annonces{
+
+    padding-left:50px;
+    padding-top:50px;
+    padding-bottom:50px;
+    background-color:#ebfceb;
+
+}
+div.titre-description-annonces h4{
+
+    font-style:Regular;
+    margin-left:80px;
+    margin-bottom:50px;
+
+}
+span.annonceur{
+
+    font-size: 14pt;
+    font-weight:bold;
+    font-family: Myriad Pro;
+    font-style:Regular;
+}
+
+div span.valeur-de-nom-annonceur{
+
+    color:#16a085;
+    font-family: TwCenMT;
+
+}
+.couleur-lettre{
+
+    color:#959293;
+
+}
+.btn-postuler{
+
+    margin-bottom:50px;
+
+}
+
+div span.nom-annonceur,div.titre-paragraphe,span.numTel,span.domaine{
+
+    font-weight:bold;
+    font-family: TwCenMT;
+
+}
+div .content-details-annonces p{
+
+    font-weight: bold;
+    font-family: TWCENTMT;
+    font-style:Regular;
+
+}
+footer a{
+
+    color:#302a2a;
+    font-family:tahoma;
+
+}
+.contenu-de-la-page{
+
+    background-color:#ebfceb;
+    padding-top:50px;
+    padding-bottom:50px;
+
+}
+.contenu-de-la-page textArea{
+
+    height:300px;
+
+}
+.formulaire-ajout-annonce input{
+
+    margin-bottom:50px;
+
+}
+.formulaire-ajout-annonce input.btn-default{
+
+    margin-top:50px;
+
+}
+
+/*fin de la page afficherAnnonce.php*/
+/*debut de la page blog*/
+
+section.bolg{
+
+    background-color:#ebfceb;
+
+}
+
+.row .titre-blog{
+
+    color:#179f87;
+    background-color:#ffffff;
+    margin-top:-20px;
+    border-bottom:1px solid black;
+    margin-bottom:25px;
+
+}
+.row .titre-blog hr{
+
+    border-bottom:1px solid black;
+
+}
+hr.soulignement{
+
+    border-bottom:1px solid #bfbbbb;
+    margin-top:40px;
+
+}
+section.container .blog{
+
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#ebfcea;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+.article1 .content,.article2 .content,.article3 .content,.article4 .content{
+
+    margin-left:50px;
+
+}
+.paragrapheDeArticle1,.paragrapheDeArticle2,.paragrapheDeArticle3,.paragrapheDeArticle4{
+
+    margin-left:-50px;
+
+}
+div.box{
+
+    border:1px solid #16a085;
+    left:15px;
+
+}
+.titre-LesCourriels{
+
+    margin-bottom:50px;
+
+}
+h3.text-center{
+
+    margin-bottom:50px;
+
+}
+
+.titre-Recents-postes{
+
+    background-color:#16a085;
+    color:#ffffff;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-bottom:0px;
+
+}
+
+div .box1,div .box2,div .box3,div .box4{
+
+    margin-bottom:5px;
+    background-color:#ffffff;
+
+
+}
+div.box1 img,div.box2 img,div.box3 img,div.box4 img{
+
+    margin-left:-15px;
+
+}
+.text1,.text3,.text4{
+
+    margin-top:20px;
+
+}
+.text2{
+
+    margin-top:10px;
+
+}
+
+
+/*fin de la page blog*/
+
+/*debut de la page conact*/
+
+
+div.titre-page-contact{
+
+    border-bottom:1px solid black;
+    color:#16a085;
+    margin-bottom:50px;
+
+}
+section.contact{
+
+    background-color:#ebfceb;
+    padding-top:20px;
+    padding-bottom:20px;
+
+}
+.champs-formulaire-contact{
+
+    margin-bottom:30px;
+
+}
+.champs-formulaire-contact input.form-control{
+
+    border-radius:0px;
+    border:0px;
+
+}
+.champs-formulaire-contact textArea.form-control{
+
+    border-radius:0px;
+    border:0px;
+
+}
+.btn input{
+
+    border-radius:0px;
+    border:1px solid #16a085;
+
+}
+
+
+/*fin du style de la page contact*/
+
+
+/*debut de ka page postulation*/
+
+section.postulation{
+
+    background-color:#ebfceb;
+    padding-top:20px;
+    padding-bottom:20px;
+
+}
+
+div.titre-page-postulation{
+
+    border-bottom:1px solid black;
+    color:#16a085;
+    margin-bottom:50px;
+
+}
+.formulaire-postulation textArea{
+
+    border-radius:0px;
+    border:0px;
+    height:200px;
+
+}
+.btn-postulation input{
+
+    border-radius:0px;
+    border:1px solid #16a085;
+
+}
+.btn-default{
+
+    border-radius:0px;
+    border:1px solid #16a085;
+
+}
+
+/*fin de la page postulation*/
+
+/*debut de la page afficherToutesLesAnnonces.php*/
+
+section.afficherToutesLesAnnonces{
+
+    background-color:#ebfceb;
+    padding-top:20px;
+    padding-bottom:20px;
+
+}
+div.formulaire-recherche-personnalisee{
+
+    background-color:#ffffff;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:145px;
+
+}
+div.offre-a-la-une,div.offres-recents{
+
+    margin-bottom:40px;
+
+}
+div.formulaire-recherche-personnalisee input,div.formulaire-recherche-personnalisee select{
+
+    border-radius:0px;
+    border-top:0px;
+    border-bottom:1px solid black;
+    border-left:0px;
+    border-right:0px;
+    margin-bottom:20px;
+
+}
+div.formulaire-recherche-personnalisee input.btn-default{
+
+    border:1px solid #16a085;
+
+}
+.titre-offre-a-la-une h4{
+
+    background-color:#16a085;
+    padding-top:10px;
+    padding-bottom:10px;
+    color:#ffffff;
+    margin-bottom:0px;
+
+}
+div.rubrique{
+
+    margin-bottom:5px;
+    background-color:#ffffff;
+    padding-top:20px;
+    padding-bottom:10px;
+    padding-right:30px;
+
+}
+div.rubrique i.fa-map-marker{
+
+    color:#16a085;
+
+}
+div.rubrique input.btn-default{
+
+    margin-top:30px;
+    margin-left:40px;
+
+}
+div.titre-conseil-emploi{
+
+    background-color:#16a085;
+    color:#ffffff;
+    margin-top:11px;
+
+}
+.conseil-emploi img{
+
+    margin-bottom:5px;
+
+}
+section.infinity-job-statistiques .container{
+
+    background-color:#fbfbfb;
+    padding-top:20px;
+    padding-bottom:20px;
+
+}
+section.infinity-job-statistiques div.stat div{
+
+    background-color:#ffffff;
+
+}
+div.titre-infinity-job-statistiques{
+
+    margin-bottom:40px;
+
+}
+div.stat div{
+
+    padding-top:40px;
+    padding-bottom:40px;
+    color:#16a085;
+    margin-bottom:10px;
+    border:1px solid #16a085;
+
+}
+div.stat div p b{
+
+    color:#1be8c0;
+
+}
+div.stat div p{
+
+    margin-bottom:30px;
+
+}
+section.infinity-job-applications .container{
+
+    background-color:#16a085;
+    padding-top:30px;
+    height:450px;
+    color:#fbfbfb;
+    margin-bottom:-15px;
+
+}
+section.infinity-job-applications div.paragraphes{
+
+    margin-top:50px;
+    margin-bottom:50px;
+
+}
+section.infinity-job-applications div.paragraphes p,div.titre-infinity-job-applications{
+
+    font-family: Myriad Pro;
+    font-style: Regular;
+    color:#fbfbfb;
+
+}
+section.infinity-job-applications div.paragraphes p{
+
+    font-size:1.5em;
+    margin-left:50px;
+
+}
+section.infinity-job-applications div.paragraphes .glyphicon{
+
+    color:#fbfbfb;
+
+}
+div.titre-infinity-job-applications{
+
+    margin-top:100px;
+
+}
+div.formulaire-bas div{
+
+    margin-top:50px;
+
+}
+div.formulaire-bas div input.form-control{
+
+    border-radius:0px;
+    border:1px solid #16a085;
+    margin-top:20px;
+
+}
+i.star-favoris{
+
+    color:#16a085;
+
+}
+div.appStore-googlePlay img{
+
+    margin-top:-20px;
+
+}
+div.logos-defiles a img{
+
+    border-bottom:1px solid black;
+
+}
+
+/*fin de la page afficherToutesLesAnnonces.php*/
+
+/*debut de la page rechercheAnnonceEtCandidature*/
+
+section.resultat-de-recherche{
+
+    background-color:#ebfceb;
+    padding-top:50px;
+    padding-bottom:50px;
+
+}
+.titre-page-rechercher-annonce-et-candidature{
+
+    color:#16a085;
+    margin-bottom:50px;
+    margin-top:-35px;
+
+}
+div.ligne-de-resultat-de-recherche{
+
+    background-color:#ffffff;
+    margin-bottom:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+
+}
+div.barre-de-recherche{
+
+    margin-top:-125px;
+    margin-bottom:150px;
+    opacity:0.8;
+
+}
+div.nombre-resultat{
+
+    margin-top:-150px;
+    position:top;
+    border-bottom:1px solid black;
+    color:#16a085;
+    margin-bottom:50px;
+    font-weight:bold;
+    font-family:TwCenMT;
+    font-style:Regular;
+
+}
+
+
+/*fin de la page rechercheAnnonceEtCandidature*/
+
+/*debut de la page afficherCompteCandidat*/
+
+div.photo-profil img{
+
+    border:1px solid #16a085;
+    margin-top:-100px;   
+
+}
+div.nom-candidat h4{
+
+    font-style:Semibold;
+    font-size:1.5em;
+    font-family:Segoe UI;
+    color:#16a085;
+    margin-left:-20px;
+    margin-top:-70px;
+    margin-bottom:100px;
+
+}
+section.afficherCompteCandidat{
+
+    padding-top:50px;
+    padding-bottom:50px;
+
+}
+
+div.informations-generales{
+
+    background-color:#16a085;
+    color:#ffffff;
+    padding-top:2px;
+    padding-bottom:2px;
+
+}
+div.contenu{
+
+    background-color:#fbfbfb;
+    margin-left:-15px;
+    margin-right:-15px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-bottom:20px;
+    border:1px solid #16a085;
+
+}
+.titre-partie2{
+
+    margin-bottom:50px;
+
+}
+div.partie2{
+
+    background-color:#ebfceb;
+    padding:50px; 
+
+}
+
+button.informations{
+
+    border-bottom:0px;
+
+}
+button.mes-annonces,button.offres,button.ma-candidature,button.candidatures,button.offres-emploi,button.favoris,button.parametres{
+
+    border-left:0px;
+    border-bottom:0px;
+
+}
+div.favoris input.favoris,div.parametres input.parametres{
+
+    border-left:0px;
+
+}
+div.contenu-partie2 p{
+
+    color:#a9b0a7;
+
+}
+div.paragraphe-bas{
+
+    background-color:#ffffff;
+    padding:20px;
+    margin-top:100px;
+
+}
+/*fin de la page afficherCompteCandidat*/
+
+/*debut de la page afficherCompteRecruteur*/
+
+div.Nos-avantages,div.En-savoir-plus{
+
+    background-color:#16a085;
+    color:#ffffff;
+    padding-top:2px;
+    padding-bottom:2px;
+
+}
+div.contenu-details-compte{
+
+    height:342px;
+    background-color:#fbfbfb;
+    margin-left:-15px;
+    margin-right:-15px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-bottom:20px;
+    border:1px solid #16a085;
+
+
+}
+
+/*fin de la page afficherCompteRecruteur*/
+

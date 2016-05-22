@@ -8,9 +8,9 @@
 
       echo $gdf->form("f13","rechercherAnnonceEtCandidature.php","post");
         
-        echo "Pays : ".$gdf->input("text","pays","pays")." ";
-        echo "Region : ".$gdf->input("text","region","region")." ";
-        echo "Ville : ".$gdf->input("text","ville","ville")."<br/><br/>";
+        echo "Pays : ".$gdf->input("text","pays","pays","form-control")." ";
+        echo "Region : ".$gdf->input("text","region","region","form-control")." ";
+        echo "Ville : ".$gdf->input("text","ville","ville","form-control")."<br/><br/>";
         
         echo "Domaine : ".$gdf->select("domaine","domaine");
           echo $gdf->option("Sciences et technologies","Sciences et technologies");
@@ -34,7 +34,7 @@
         echo $gdf->hidden("id",$_POST['id']);
         echo $gdf->hidden("nature",$_POST['nature']);
         
-        echo $gdf->submit("rechercher","rechercher","rechercher");
+        echo $gdf->submit("rechercher","rechercher","rechercher","btn btn-default");
         
       echo $gdf->endForm();
 

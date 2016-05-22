@@ -105,7 +105,8 @@
     
           if($res = $this->getPDO()->query($requet)){
             
-            $annonces =$res->fetchAll(PDO::FETCH_OBJ); 
+            $annonces = $res->fetchAll(PDO::FETCH_OBJ); 
+            
             return $annonces;
             
           }

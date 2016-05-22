@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<section class = 'container-fluid'>
 <?php
 
   require "Autoloader.php";
@@ -8,19 +14,22 @@
   $postulation->setDomaine($_POST['domaine']);
   $postulation->setIdAnnonces($_POST['idAnnonces']);
   $postulation->setIdCandidat($_POST['idCandidat']);
-  $postulation->setIdRecruteur($_POST['id']);
+  $postulation->setIdRecruteur($_POST['idRecruteur']);
   $postulation->setLettreDeMotivation($_POST['lettreDeMotivation']);
   $default = 'null';
 
-  if($postulation->postuler("insert into postulation set lettreDeMotivation = '".$postulation->getLettreDeMotivation()."',idAnnonces = '".$postulation->getIdAnnonces()."',idRecruteur = '".$postulation->getIdRecruteur()."',idCandidat = '".$postulation->getIdCandidat()."'")){
+  if($postulation->postuler("INSERT INTO postulation SET lettreDeMotivation = '".$postulation->getLettreDeMotivation()."',idAnnonces = ".$postulation->getIdAnnonces().",idRecruteur = ".$postulation->getIdRecruteur().",idCandidat = ".$postulation->getIdCandidat()."")){
   
-      echo "Vos donnees ont etaient envoyees <br/>";
+      header("location:formulaireDePostulation.php?reponse=true");
   
   }
   else{
   
-    echo "echec de l'envoie des donnees veuillez reessayer <br/>";
+    header("location:formulaireDePostulation.php?reponse=false");
   
   }
 
 ?>
+</section>
+</body>
+</html>

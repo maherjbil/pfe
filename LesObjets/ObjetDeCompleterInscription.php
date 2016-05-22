@@ -6,34 +6,92 @@
     
       if($_POST['nature'] == 'candidat'){
       
-        $candidat = new Completer($_POST['prenom'],$_POST['specialite'],$_POST['domaine'],$_POST['niveau'],$_POST['pays'],$_POST['region'],$_POST['ville'],$_POST['numeroTelephone']);
-        if($candidat->updateCandidat("update candidat set specialite = '".$candidat->getSpecialite()."',domaine = '".$candidat->getDomaine()."',niveau = '".$candidat->getNiveau()."',pays = '".$candidat->getPays()."',region = '".$candidat->getRegion()."',ville = '".$candidat->getVille()."',numeroTelephone = '".$candidat->getNumeroTelephone()."'")){
+        $candidat = new Candidat($_POST['nature']);
+        $candidat->setLogin($_POST['login']);
+        $candidat->setPassword($_POST['password']);
+        $candidat->setDateNaiss($_POST['dateNaiss']);
+        $candidat->setSpecialite($_POST['specialite']);
+        $candidat->setDomaine($_POST['domaine']);
+        $candidat->setNiveau($_POST['niveau']);
+        $candidat->setPays($_POST['pays']);
+        $candidat->setRegion($_POST['region']);
+        $candidat->setVille($_POST['ville']);
+        $candidat->setNumeroTelephone($_POST['numeroTelephone']);
+        $candidat->setPhoto($_POST['photo']);
+
+        
+
+        if($res = $candidat->afficherCandidat("select * from candidat where loginCandidat = '".$candidat->getLogin()."' and passwordCandidat = '".$candidat->getPassword()."'")){
+
+              foreach($res as $object){
+
+                    $candidat->setId($object->idCandidat);
+
+              }
+
+        }
+        else if($res == null){
+
+              echo "impossible de recuperer la cle primaire de la table candidat";
+
+        }
+
+
+        if($candidat->updateCandidat("update candidat set dateNaissCandidat = '".$candidat->getDateNaiss()."',specialiteCandidat = '".$candidat->getSpecialite()."',domaineCandidat = '".$candidat->getDomaine()."',niveauCandidat = '".$candidat->getNiveau()."',paysCandidat = '".$candidat->getPays()."',regionCandidat = '".$candidat->getRegion()."',villeCandidat = '".$candidat->getVille()."',numeroTelephoneCandidat = '".$candidat->getNumeroTelephone()."',photoCandidat = '".$candidat->getPhoto()."' where idCandidat = '".$candidat->getId()."'")){
           
-          echo $candidat->getPrenom()." votre inscription est terminee <br/> voulez-vous <a href = 'connexion.php'>se connecter</a>";
+           header("location:verifDonneesCandidat.php?result=true");
         
         }
         else{
         
-          echo "insertion echouee veuillez reessayer <br/>";
+            header("location:verifDonneesCandidat.php?result=false");
         
         }
       
       }
       
-      if($_POST['nature'] == 'recruteur'){
+      else if($_POST['nature'] == 'recruteur'){
+
         
         $null = "";
         
-        $recruteur = new Completer($_POST['prenom'],$null,$_POST['domaine'],$null,$_POST['pays'],$_POST['region'],$_POST['ville'],$_POST['numeroTelephone']);
+        $recruteur = new Recruteur($_POST['nature']);
+        $recruteur->setLogin($_POST['login']);
+        $recruteur->setPassword($_POST['password']);
+        $recruteur->setDateNaiss($_POST['dateNaiss']);
+        $recruteur->setDomaine($_POST['domaine']);
+        $recruteur->setPays($_POST['pays']);
+        $recruteur->setRegion($_POST['region']);
+        $recruteur->setVille($_POST['ville']);
+        $recruteur->setNumeroTelephone($_POST['numeroTelephone']);
+        $recruteur->setPhoto($_POST['photo']);
       
-        if($recruteur->updateRecruteur("update recruteur set domaine = '".$recruteur->getDomaine()."',pays = '".$recruteur->getPays()."',region = '".$recruteur->getRegion()."',ville = '".$recruteur->getVille()."',numeroTelephone = '".$recruteur->getNumeroTelephone()."'")){
+
+
+        if($res = $recruteur->afficherRecruteur("select * from recruteur where loginRecruteur = '".$recruteur->getLogin()."' and passwordRecruteur = '".$recruteur->getPassword()."'")){
+
+              foreach($res as $object){
+
+                    $recruteur->setId($object->idRecruteur);
+
+              }
+
+        }
+        else if($res == null){
+
+              echo "impossible de recuperer la cle primaire de la table recruteur";
+
+        }
+
+      
+        if($recruteur->updateRecruteur("update recruteur set dateNaissRecruteur = '".$recruteur->getDateNaiss()."',domaineRecruteur = '".$recruteur->getDomaine()."',paysRecruteur = '".$recruteur->getPays()."',regionRecruteur = '".$recruteur->getRegion()."',villeRecruteur = '".$recruteur->getVille()."',numeroTelephoneRecruteur = '".$recruteur->getNumeroTelephone()."',photoRecruteur = '".$recruteur->getPhoto()."' where idRecruteur = '".$recruteur->getId()."'")){
         
-          echo $recruteur->getPrenom()." votre inscription est terminee voulez-vous <a href = 'connexion.php'>se connecter</a><br/>";
+            header("location:verifDonneesRecruteur.php?result=true");
         
         }
         else{
         
-          echo "insertion echouee veuillez reessayer <br/>";
+            header("location:verifDonneesRecruteur.php?result=false");
         
         } 
       

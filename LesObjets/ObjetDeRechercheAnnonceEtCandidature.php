@@ -1,36 +1,102 @@
 <?php
 
-  require "Autoloader.php";
+  //require "Autoloader.php"; cette classe est appelee dans la page rechercherAnnoncesEtCandidature.php je ne peut pas la rediclarer
   
   Autoloader::register();
+
+  if(isset($_SESSION['id']) && isset($_SESSION['domaine']) && isset($_SESSION['nature'])){
+
+
+
+            $annonces = new Annonces($_SESSION['id'],$_SESSION['domaine'],$_SESSION['nature']);
+
+                echo "<div class = 'col-md-10 col-md-offset-1'>";
+
+                    $count = 0;
+
+                    
+                    if(isset($_GET['motCle'])){
+
+                              if($listAnnonces1 = $annonces->afficherAnnonces("select * from annonces,recruteur where annonces.idRecruteur = recruteur.idRecruteur and annonces.titre = '".$_GET['motCle']."' or annonces.titre like '".$_GET['motCle']."%' or annonces.titre like '%".$_GET['motCle']."' or annonces.titre like '%".$_GET['motCle']."%' or annonces.contenu like '%".$_GET['motCle']."' or annonces.contenu like '".$_GET['motCle']."%' or annonces.contenu like '%".$_GET['motCle']."%' limit 1")){
+
+                                  foreach($listAnnonces1 as $object1){
+
+                                    $count += 1;
+
+                                        echo "<div class = 'row ligne-de-resultat-de-recherche'>";
+
+                                            echo "<div class = 'col-md-2'><img class = 'img-responsive' src = '".$object1->photoRecruteur."'></div><div class = 'col-md-4'><h4>".$object1->titre."</h4><br/><h4>".$object1->nomRecruteur."</h4></div><div class = 'col-md-4'><b>".$object1->villeRecruteur."</b><p>".$object1->datePublication."</p></div><div class = 'col-md-1'><i class = 'fa fa-envelope-o'></i></div><div class = 'col-md-1'><a href = 'ajouterFavoris.php?idAnnonces=".$object1->idAnnonces."'><i class = 'fa fa-star-o star-favoris'></i></a></div>";
+
+                                        echo "</div>";
+                                
+                                  }
+
+                              }
+
+
+                    }
+
+                          if($count == 0){
+
+                                     echo "Aucune annonce n'est trouvee<br/>";
+
+                          }          
+                                   
+
+                echo "</div>";
+
+
+
+  }
+
+  else{
+
+
+        $annonces = new Annonces('null','null','null');
+
+          echo "<div class = 'col-md-10 col-md-offset-1'>";
+
+                    $count = 0;
+
+                    
+                    if(isset($_GET['motCle'])){
+
+                              if($listAnnonces1 = $annonces->afficherAnnonces("select * from annonces,recruteur where annonces.idRecruteur = recruteur.idRecruteur and annonces.titre = '".$_GET['motCle']."' or annonces.titre like '".$_GET['motCle']."%' or annonces.titre like '%".$_GET['motCle']."' or annonces.titre like '%".$_GET['motCle']."%' or annonces.contenu like '%".$_GET['motCle']."' or annonces.contenu like '".$_GET['motCle']."%' or annonces.contenu like '%".$_GET['motCle']."%' limit 1")){
+
+                                  foreach($listAnnonces1 as $object1){
+
+                                    $count += 1;
+
+                                        echo "<div class = 'row ligne-de-resultat-de-recherche'>";
+
+                                            echo "<div class = 'col-md-2'><img class = 'img-responsive' src = '".$object1->photoRecruteur."'></div><div class = 'col-md-4'><h4>".$object1->titre."</h4><br/><h4>".$object1->nomRecruteur."</h4></div><div class = 'col-md-4'><b>".$object1->villeRecruteur."</b><p>".$object1->datePublication."</p></div><div class = 'col-md-1'><i class = 'fa fa-envelope-o'></i></div><div class = 'col-md-1'><a href = 'ajouterFavoris.php?idAnnonces=".$object1->idAnnonces."'><i class = 'fa fa-star-o star-favoris'></i></a></div>";
+
+                                        echo "</div>";
+                                
+                                  }
+
+                              }
+
+
+                    }
+
+                          if($count == 0){
+
+                                     echo "Aucune annonce n'est trouvee<br/>";
+
+                          }          
+                                   
+
+                echo "</div>";
+
+
+
+
+  }
+
+
   
-  $annonces = new Annonces($_POST['id'],$_POST['domaine'],$_POST['nature']);
-    
-    $annonces->setPays($_POST['pays']);
-    $annonces->setRegion($_POST['region']);
-    $annonces->setVille($_POST['ville']);
-    $annonces->setSpecialite($_POST['specialite']);
-    $annonces->setNiveau($_POST['niveau']);
-    
-    if($listAnnonces = $annonces->afficherAnnonces("select * from annonces,candidat,recruteur where annonces.idCandidat = candidat.idCandidat and annonces.domaine = '".$annonces->getDomaine()."' or annonces.idRecruteur = recruteur.idRecruteur and annonces.domaine = '".$annonces->getDomaine()."'")){
-    
-      echo "<h3>Voila la liste des annonces correspondantes aux criteres de recherche que vous avez choisit</h3>";
-      echo "<table border = 2>";
-      echo "<tr><td>Titre</td><td>Contenu</td><td>Date de publication</td><td>Numero de telephone</td></tr>";
-      
-        foreach($listAnnonces as $object){
-      
-          echo "<tr><td>".$object->nom."</td><td>".$object->contenu."</td><td>".$object->datePublication."</td><td>".$object->numeroTelephone."</td></tr>";
-      
-        }
-      
-      echo "</table>";
-      
-    }
-    else if($listAnnonces == null){
-    
-      echo "aucune annonce ne corresponde aux criteres de selection que vous avez choisit <br/>";
-    
-    }
+  
+  
 
 ?>

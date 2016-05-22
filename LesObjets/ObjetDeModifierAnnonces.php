@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+
+
   require "Autoloader.php";
   Autoloader::register();
   
@@ -11,14 +14,13 @@
   $gdf = new GenerateurDuFormulaire();
   
     if($annonces->ajouterOuModifierOuSupprimerAnnonces("update annonces set titre = '".$annonces->getNomAnnonce()."',contenu = '".$annonces->getContenuAnnonce()."' where idAnnonces = ".$annonces->getIdAnnonces())){
-    
-        echo "les modifications sont effectuees avec succes <br/>";
-        echo "voulez-vous consulter ".$gdf->form("f15","afficherAnnoncesPersonnels.php","post").$gdf->hidden("id",$annonces->getId()).$gdf->hidden("domaine",$annonces->getDomaine()).$gdf->hidden("nature",$annonces->getNature()).$gdf->submit("consulterAnnoncesPersonnels","consulterAnnoncesPersonnels","vos annonces").$gdf->endForm();
+
+        header("location:formulaireModificationAnnonces.php?result=true");
     
     }
     else{
-    
-      echo "les modifications ont echoues veuillez ".$gdf->form("f16","formulaireModificationAnnonces.php","post").$gdf->hidden("id",$annonces->getId()).$gdf->hidden("domaine",$annonces->getDomaine()).$gdf->hidden("nature",$annonces->getNature()).$gdf->submit("repeterModification","repeterModification","reessayer").$gdf->endForm();
+
+      header("location:formulaireModificationAnnonces.php?result=false");
     
     }
 ?>

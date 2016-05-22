@@ -1,10 +1,12 @@
  <?php
 
+ session_start();
+
   require "Autoloader.php";
 
     Autoloader::register();
 
-  $annonces = new Annonces($_POST['id'],$_POST['domaine'],$_POST['nature']);
+  $annonces = new Annonces($_SESSION['id'],$_SESSION['domaine'],$_SESSION['nature']);
   
   
   $gdf = new GenerateurDuFormulaire();
@@ -24,12 +26,12 @@
           echo "<tr><td>".$object->titre."</td><td>".$object->contenu."</td><td>".$object->datePublication."</td><td>".
           $gdf->form("f14","formulaireModificationAnnonces.php","post").$gdf->hidden("nomAnnonce",$object->titre).
           $gdf->hidden("contenuAnnonce",$object->contenu).$gdf->hidden("datePublication",$object->datePublication).
-          $gdf->hidden("idAnnonces",$object->idAnnonces).$gdf->hidden("id",$annonces->getId()).
+          $gdf->hidden("id",$annonces->getId()).$gdf->hidden("idAnnonces",$object->idAnnonces).
           $gdf->hidden("domaine",$annonces->getDomaine()).$gdf->hidden("nature",$annonces->getNature()).
-          $gdf->submit("modifierAnnonces","modifierAnnonces","modifier").$gdf->endForm()."</td><td>".
-          $gdf->form("f14","supprimerAnnonces.php","post").$gdf->hidden("id",$annonces->getId()).
+          $gdf->submit("modifierAnnonces","modifierAnnonces","modifier","btn btn-default").$gdf->endForm()."</td><td>".
+          $gdf->form("f14","supprimerAnnonces.php","post").$gdf->hidden("id",$annonces->getId()).$gdf->hidden("idAnnonces",$object->idAnnonces).
           $gdf->hidden("domaine",$annonces->getDomaine()).$gdf->hidden("nature",$annonces->getNature()).$gdf->hidden("idAnnonces",$object->idAnnonces).
-          $gdf->submit("supprimerAnnonces","supprimerAnnonces","supprimer").$gdf->endForm()."</td></tr>";
+          $gdf->submit("supprimerAnnonces","supprimerAnnonces","supprimer","btn btn-default").$gdf->endForm()."</td></tr>";
       
         }
       
@@ -37,14 +39,14 @@
         
         echo "voulez-vous ajouter ".$gdf->form("f12","formulaireAjoutAnnonces.php","post").
         $gdf->hidden("id",$annonces->getId()).$gdf->hidden("domaine",$annonces->getDomaine()).
-        $gdf->hidden("nature",$annonces->getNature()).$gdf->submit("ajouterAnnonces","ajouterAnnonces","une annonce").$gdf->endForm();
+        $gdf->hidden("nature",$annonces->getNature()).$gdf->submit("ajouterAnnonces","ajouterAnnonces","une annonce","btn btn-default").$gdf->endForm();
       
     }
     else if($list == null){
   
       echo "vous n'avait publie aucune annonce voulez-vous ".$gdf->form("f20","formulaireAjoutAnnonces.php","post").
       $gdf->hidden("id",$annonces->getId()).$gdf->hidden("domaine",$annonces->getDomaine()).$gdf->hidden("nature",$annonces->getNature()).
-      $gdf->submit("ajouterAnnonces","ajouterAnnonces","ajouter Une").$gdf->endForm();
+      $gdf->submit("ajouterAnnonces","ajouterAnnonces","ajouter Une","btn btn-default").$gdf->endForm();
   
     }
   }
@@ -64,19 +66,19 @@
           echo "<tr><td>".$object->titre."</td><td>".$object->contenu."</td><td>".$object->datePublication."</td><td>".
           $gdf->form("f14","formulaireModificationAnnonces.php","post").$gdf->hidden("nomAnnonce",$object->titre).
           $gdf->hidden("contenuAnnonce",$object->contenu).$gdf->hidden("datePublication",$object->datePublication).
-          $gdf->hidden("idAnnonces",$object->idAnnonces).$gdf->hidden("id",$annonces->getId()).
+          $gdf->hidden("id",$annonces->getId()).$gdf->hidden('idAnnonces',$object->idAnnonces).
           $gdf->hidden("domaine",$annonces->getDomaine()).$gdf->hidden("nature",$annonces->getNature()).
-          $gdf->submit("modifierAnnonces","modifierAnnonces","modifier").$gdf->endForm()."</td><td>".
+          $gdf->submit("modifierAnnonces","modifierAnnonces","modifier","btn btn-default").$gdf->endForm()."</td><td>".
           $gdf->form("f14","supprimerAnnonces.php","post").$gdf->hidden("id",$annonces->getId()).
           $gdf->hidden("domaine",$annonces->getDomaine()).$gdf->hidden("nature",$annonces->getNature()).$gdf->hidden("idAnnonces",$object->idAnnonces).
-          $gdf->submit("supprimerAnnonces","supprimerAnnonces","supprimer").$gdf->endForm()."</td></tr>";
+          $gdf->submit("supprimerAnnonces","supprimerAnnonces","supprimer","btn btn-default").$gdf->endForm()."</td></tr>";
       
         }
       
         echo "</table>";
         echo "voulez-vous ajouter ".$gdf->form("f13","formulaireAjoutAnnonces.php","post").
         $gdf->hidden("id",$annonces->getId()).$gdf->hidden("domaine",$annonces->getDomaine()).
-        $gdf->hidden("nature",$annonces->getNature()).$gdf->submit("ajouterAnnonces","ajouterAnnonces","une annonce").$gdf->endForm();
+        $gdf->hidden("nature",$annonces->getNature()).$gdf->submit("ajouterAnnonces","ajouterAnnonces","une annonce","btn btn-default").$gdf->endForm();
       
     }
     else if($list == null){
@@ -84,10 +86,26 @@
       echo "vous n'avez deposer aucune annonce <br/>";
       echo "voulez-vous".$gdf->form("f9","formulaireAjoutAnnonces.php","post").$gdf->hidden("id",$annonces->getId()).
       $gdf->hidden("domaine",$annonces->getDomaine()).$gdf->hidden("nature",$annonces->getNature()).
-      $gdf->submit("ajouterAnnonces","ajouterAnnonces","deposer une").$gdf->endForm();
+      $gdf->submit("ajouterAnnonces","ajouterAnnonces","deposer une","btn btn-default").$gdf->endForm();
   
     }
   
+  }
+
+  if(isset($_GET['result'])){
+
+        if($_GET['result'] == 'true'){
+
+              echo "l'annonce a ete supprimer <br/>";
+              
+
+        }
+        else{
+
+              echo "la suppression de l'annonce  a ete echouee veuillez reessayer";
+
+        }
+
   }
   
 ?>

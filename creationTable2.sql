@@ -25,7 +25,6 @@ CREATE TABLE `annonces` (
   `titre` varchar(50) default NULL,
   `contenu` varchar(255) default NULL,
   `datePublication` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `domaine` varchar(30) NOT NULL,
   `idCandidat` int(10) default NULL,
   `idRecruteur` int(10) default NULL,
   PRIMARY KEY  (`idAnnonces`),

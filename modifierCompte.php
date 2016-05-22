@@ -1,4 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel = 'stylesheet' type = 'text/css' href = 'bootstrap/css/bootstrap-responsive.css'>
+  <link rel = 'stylesheet' type = 'text/css' href = 'bootstrap/css/bootstrap.min.css'>
+</head>
+<section class = 'container-fluid'>
 <?php
+
+session_start();
+$_SESSION['id'] = $_POST['id'];
+$_SESSION['domaine'] = $_POST['domaine'];
+$_SESSION['nature'] = $_POST['nature'];
 
     require "Autoloader.php";
     
@@ -25,18 +38,15 @@
       
       if($compte->getNature() == 'candidat'){
         
-          if($compte->modifierOuSupprimerCompte("update candidat set nom = '".$compte->getNom()."',prenom = '".$compte->getPrenom()."',dateNaiss = '".$compte->getDateNaiss()."',login = '".$compte->getLogin()."',password = '".$compte->getPassword()."'")){
-        
-                echo "Votre compte a ete modifier voulez-vous <a href = 'connexion.php'>se connecter</a>";
-                
-                echo "ou consulter votre ".$gdf->form("f38","afficherCompte.php","post").$gdf->hidden("id",$compte->getId()).$gdf->hidden("domaine",$compte->getDomaine()).$gdf->hidden("nature",$compte->getNature()).$gdf->submit("consulterCompte","consulterCompte","compte");
+          if($compte->modifierOuSupprimerCompte("update candidat set nomCandidat = '".$compte->getNom()."',prenomCandidat = '".$compte->getPrenom()."',dateNaissCandidat = '".$compte->getDateNaiss()."',loginCandidat = '".$compte->getLogin()."',passwordCandidat = '".$compte->getPassword()."'")){
+
+                header("location:formulaireDeModificationDuCompteCandidat.php?result=true");
         
           }
           else{
           
-                echo "la modification du compte a ete echouee veuillez ".
-                
-                $gdf->form("f33","formulaireDeModificationDuCompte.php","post").$gdf->hidden("id",$compte->getId()).$gdf->hidden("domaine",$compte->getDomaine).$gdf->hidden("nature",$compte->getNature()).$gdf->submit("reessayerModificationCompte","reessayerModificationCompte","reessayer").$gdf->endForm();
+
+                header("location:formulaireDeModificationDuCompteCandidat.php?result=false");
           
           }
        
@@ -44,16 +54,14 @@
        
        else if($compte->getNature() == 'recruteur'){
        
-            if($compte->modifierOuSupprimerCompte("update recruteur set nom = '".$compte->getNom()."',prenom = '".$compte->getPrenom()."',dateNaiss = '".$compte->getDateNaiss()."',login = '".$compte->getLogin()."',password = '".$compte->getPassword()."'")){
-            
-                 echo "votre compte a ete modifier voulez-vous <a href = 'connexion.php'>se connecter</a>";
+            if($compte->modifierOuSupprimerCompte("update recruteur set nomRecruteur = '".$compte->getNom()."',prenomRecruteur = '".$compte->getPrenom()."',dateNaissRecruteur = '".$compte->getDateNaiss()."',loginRecruteur = '".$compte->getLogin()."',passwordRecruteur = '".$compte->getPassword()."'")){
+
+                 header("location:formulaireDeModificationDuCompteRecruteur.php?result=true");
             
             }
             else{
-            
-                 echo "la modification du compte a ete echouee veuillez ".
                 
-                $gdf->form("f34","formulaireDeModificationDuCompte.php","post").$gdf->hidden("id",$compte->getId()).$gdf->hidden("domaine",$compte->getDomaine).$gdf->hidden("nature",$compte->getNature()).$gdf->submit("reessayerModificationCompte","reessayerModificationCompte","reessayer").$gdf->endForm();
+                header("location:formulaireDeModificationDuCompteRecruteur.php?result=false");
             
             }
        
@@ -66,3 +74,6 @@
 
 
 ?>
+</section>
+</body>
+</html>

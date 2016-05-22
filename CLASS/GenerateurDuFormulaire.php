@@ -1,3 +1,5 @@
+
+
 <?php
 
   class GenerateurDuFormulaire{
@@ -9,6 +11,7 @@
       private $id;
       private $value;
       private $text;
+      private $class;
       
       
       public function form($name,$action,$method){
@@ -26,12 +29,13 @@
       
       }
       
-      public function input($type,$name,$id){
+      public function input($type,$name,$id,$class){
       
         $this->type = $type;
         $this->name = $name;
         $this->id = $id;
-        return "<input type = '{$this->type}' name = '{$this->name}' id = '{$this->id}'>";
+        $this->class = $class;
+        return "<input class = '{$this->class}' type = '{$this->type}' name = '{$this->name}' id = '{$this->id}'>";
       
       }
       
@@ -40,6 +44,13 @@
         return "<input type = '{$type}' name = '{$name}' id = '{$id}' value = '{$value}'>";
       
       }
+
+      public function inputFile($name,$id){
+
+
+        return "<input type = 'file' name = '{$name}' id = '{$id}'>";
+
+      }
       
       public function hidden($name,$value){
       
@@ -47,12 +58,13 @@
       
       }
       
-      public function submit($name,$id,$value){
+      public function submit($name,$id,$value,$class){
       
          $this->name = $name;
          $this->id = $id;
          $this->value = $value;
-        return "<input type = 'submit' name = '{$this->name}' id = '{$this->id}' value = '{$this->value}'>";
+         $this->class = $class;
+        return "<input class = '{$this->class}' type = 'submit' name = '{$this->name}' id = '{$this->id}' value = '{$this->value}'>";
       
       }
       
@@ -61,7 +73,7 @@
         $this->name = $name;
         $this->id = $id;
         $this->value = $value;
-        return "<input type = 'reset' name = '{$this->name}' id = '{$this->id}' value = '{$this->value}'>";
+        return "<input class = 'btn btn-danger' type = 'reset' name = '{$this->name}' id = '{$this->id}' value = '{$this->value}'>";
         
       }
       
@@ -69,7 +81,7 @@
       
         $this->name = $name;
         $this->id = $id;
-        return "<select name = '{$this->name}' id = '{$this->id}'>";
+        return "<select name = '{$this->name}' id = '{$this->id}' class = 'form-control'>";
         
       }
       
@@ -89,13 +101,18 @@
       
       public function textArea($name,$id){
       
-        return "<textArea name = '{$name}' id = '{$id}'></textArea>";
+        return "<textArea name = '{$name}' id = '{$id}' class = 'form-control'></textArea>";
       
       }
       
       public function modifierTextArea($name,$id,$value){
       
         return "<textarea name = '{$name}' id = '{$id}'>{$value}</textarea>";
+      
+      }
+      public function checkbox($name,$id,$value){
+      
+            return "<input type = 'checkbox' name = '{$name}' id = '{$id}' value = '{$value}'>";
       
       }
       

@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<section class = 'container-fluid'>
 <?php
 
   require "Autoloader.php";
@@ -17,14 +23,14 @@
   
   $gdf = new GenerateurDuFormulaire();
 
-        if($postulation->postuler("update postulation set lettreDeMotivation = '".$postulation->getLettreDeMotivation()."' where idPostulation = ".$postulation->getIdPostulation())){
+        if($postulation->postuler("UPDATE postulation SET lettreDeMotivation = '".$postulation->getLettreDeMotivation()."' WHERE idPostulation = ".$postulation->getIdPostulation())){
         
             echo "Les modification ont etaient effectues avec succes ";
             
             echo "Voulez-vous consulter ".$gdf->form("f31","afficherCandidats.php","post").$gdf->hidden("idPostulation",$postulation->getIdPostulation()).
             $gdf->hidden("id",$postulation->getIdCandidat()).$gdf->hidden("lettreDeMotivation",$postulation->getLettreDeMotivation()).
             $gdf->hidden("domaine",$postulation->getDomaine()).$gdf->hidden("nature",$postulation->getNature()).
-            $gdf->submit("afficherCandidats","afficherCandidats","votre candidature").$gdf->endForm();
+            $gdf->submit("afficherCandidats","afficherCandidats","votre candidature","btn btn-default").$gdf->endForm();
         
         }
         else{
@@ -32,7 +38,7 @@
             echo "La modification a ete echouee veuillez ".$gdf->form("f32","formulaireDeModificationDeLettreDeMotivation.php","post").$gdf->hidden("idPostulation",$postulation->getIdPostulation()).
             $gdf->hidden("idCandidat",$postulation->getIdCandidat()).$gdf->hidden("lettreDeMotivation",$postulation->getLettreDeMotivation()).
             $gdf->hidden("domaine",$postulation->getDomaine()).$gdf->hidden("nature",$postulation->getNature()).
-            $gdf->submit("reessayerModificationLettre","reessayerModificationLettre","reessayer").$gdf->endForm();
+            $gdf->submit("reessayerModificationLettre","reessayerModificationLettre","reessayer","btn btn-default").$gdf->endForm();
         
         }
 
@@ -42,3 +48,6 @@
 
 
 ?>
+</section>
+</body>
+</html>
