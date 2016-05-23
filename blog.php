@@ -9,7 +9,7 @@
 <body>
 
 
-<nav class = 'nav navbar-fixed-top' role = 'navigation'>
+<nav class = 'nav navbar-fixed-top' role = 'navigation' style = 'border-bottom:1px solid #d5d4d4'>
   
     <div class="navbar-header">
 
@@ -128,7 +128,7 @@
                         			  	
                         			  	<div class = 'row' style = 'margin-left:5px'>
                         			  	
-                        			  		<div class = 'col-md-6'><i class = 'glyphicon glyphicon-calendar fa-2x'></i> avril 4,2016 par <span style = 'color:#179f87'>infinity job</span></div>
+                        			  		<div class = 'col-md-6'><i class = 'fa fa-calendar aria-hidden="true" fa-2x'></i> avril 4,2016 par <span style = 'color:#179f87'>infinity job</span></div>
 
                         			  		<div class = 'col-md-2'><i class = 'fa fa-thumbs-o-up fa-2x'></i><span style = 'color:#179f87'> 1 j'aime</span></div>
 
@@ -173,7 +173,7 @@
                         			  	
                         			  	<div class = 'row' style = 'margin-left:5px'>
                         			  	
-                        			  		<div class = 'col-md-6'><i class = 'glyphicon glyphicon-calendar fa-2x'></i> fevrier 10,2016 par <span style = 'color:#179f87'>infinity job</span></div>
+                        			  		<div class = 'col-md-6'><i class = 'fa fa-calendar area-hidden="true" fa-2x'></i> fevrier 10,2016 par <span style = 'color:#179f87'>infinity job</span></div>
 
                         			  		<div class = 'col-md-2'><i class = 'fa fa-thumbs-o-up fa-2x'></i><span style = 'color:#179f87'> 1 j'aime</span></div>
 
@@ -220,7 +220,7 @@
                         			  	
                         			  	<div class = 'row' style = 'margin-left:5px'>
                         			  	
-                        			  		<div class = 'col-md-6'><i class = 'glyphicon glyphicon-calendar fa-2x'></i> janvier 4,2016 par <span style = 'color:#179f87'>infinity job</span></div>
+                        			  		<div class = 'col-md-6'><i class = 'fa fa-calendar area-hidden="true" fa-2x'></i> janvier 4,2016 par <span style = 'color:#179f87'>infinity job</span></div>
 
                         			  		<div class = 'col-md-2'><i class = 'fa fa-thumbs-o-up fa-2x'></i><span style = 'color:#179f87'> 1 j'aime</span></div>
 
@@ -267,7 +267,7 @@
                         			  	
                         			  	<div class = 'row' style = 'margin-left:5px'>
                         			  	
-                        			  		<div class = 'col-md-6'><i class = 'glyphicon glyphicon-calendar fa-2x'></i> novembre 4,2016 par <span style = 'color:#179f87'>infinity job</span></div>
+                        			  		<div class = 'col-md-6'><i class = 'fa fa-calendar area-hidden="true" fa-2x'></i> novembre 4,2016 par <span style = 'color:#179f87'>infinity job</span></div>
 
                         			  		<div class = 'col-md-2'><i class = 'fa fa-thumbs-o-up fa-2x'></i><span style = 'color:#179f87'> 1 j'aime</span></div>
 
@@ -300,15 +300,10 @@
 
 
                   <div class = 'col-md-10 col-md-offset-1'>
-                  		<div class = 'row'>
 
-                        		<div class = 'col-md-4 col-xs-12'>
                           
                             		<div class = 'titre-Recents-postes'><h4 class ='text-center' >Recents postes</h4></div>
-
-                        		</div>    
-
-                  		</div>
+    
                   	</div>
 
 
@@ -320,7 +315,7 @@
                             <div class = 'row box1'>
 
                                     <div class = 'col-md-4 col-xs-12'>
-                                        <div class = 'img1'><img class = 'img-responsive' src = 'img/bonheur_responsabilite.jpg'></div>
+                                        <div class = 'img1'><img class = 'img-responsive' src = 'img/blog1.png'></div>
                                     </div>
                                     
                                     <div class = 'col-md-6 col-xs-12'>
@@ -334,7 +329,7 @@
                             <div class = 'row box2'>
                             
                                     <div class = 'col-md-4 col-xs-12'>
-                                        <div class = 'img1'><img class = 'img-responsive' src = 'img/testsderecrutement.jpg'></div>
+                                        <div class = 'img1'><img class = 'img-responsive' src = 'img/2.png'></div>
                                     </div>
                                     
                                     <div class = 'col-md-6 col-xs-12'>
@@ -348,7 +343,7 @@
                             <div class = 'row box3'>
                             
                                     <div class = 'col-md-4 col-xs-12'>
-                                        <div class = 'img1'><img class = 'img-responsive' src = 'img/3150.jpg'></div>
+                                        <div class = 'img1'><img class = 'img-responsive' src = 'img/blog3.png'></div>
                                     </div>
                                     
                                     <div class = 'col-md-6 col-xs-12'>
@@ -362,7 +357,7 @@
                             <div class = 'row box4'>
                             
                                     <div class = 'col-md-4 col-xs-12'>
-                                        <div class = 'img1'><img class = 'img-responsive' src = 'img/creativite.jpg'></div>
+                                        <div class = 'img1'><img class = 'img-responsive' src = 'img/blog2.png'></div>
                                     </div>
                                     
                                     <div class = 'col-md-6 col-xs-12'>

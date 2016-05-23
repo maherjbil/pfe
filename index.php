@@ -14,7 +14,7 @@ session_start();
 <body>
 
 
-<nav class = 'nav navbar-fixed-top' role = 'navigation'>
+<nav class = 'nav navbar-fixed-top' role = 'navigation' style = 'border-bottom:1px solid #d5d4d4'>
   
     <div class="navbar-header">
 
@@ -78,7 +78,7 @@ session_start();
     </div>
   </header>
 
-<section class = 'container afficherToutesLesAnnonces'>
+<section class = 'container-fluid afficherToutesLesAnnonces'>
 
 
         <?php include("LesObjets/ObjetDeAfficherToutesLesAnnonces.php"); ?>
@@ -87,51 +87,51 @@ session_start();
 </section>
 
 
-<section class = 'infinity-job-statistiques text-center'>
+<section class = 'infinity-job-statistiques'>
 
-      <div class = 'container'>
+      <div class = 'container-fluid'>
 
-            <div class = 'titre-infinity-job-statistiques'><h1>Infinity job statistiques</h1></div>
+            <div class = 'titre-infinity-job-statistiques text-center'><h1>Infinity job statistiques</h1></div>
 
               <div class = 'row'>
 
-                  <div class = 'col-md-offset-1 col-md-2 stat'>
+                  <div class = 'col-md-offset-1 col-md-2 stat' >
 
-                    <div><p class = 'lead'><b>653</b></p><i class = 'fa fa-heart fa-3x'></i></div><p><b>EMPLOI REMPLI</b></p>
-
-                  </div>
-
-                  <div class = 'col-md-2 stat'>
-
-                    <div><p class = 'lead'><b>653</b></p><i class = 'fa fa-heart fa-3x'></i></div><p><b>PROFILS</b></p>
+                    <div class = 'text-center'><p class = 'lead'><b>653</b></p><i class = 'fa fa-heart fa-2x'></i></div><p style = 'margin-left:15px'><b>EMPLOI REMPLI</b></p>
 
                   </div>
 
                   <div class = 'col-md-2 stat'>
 
-                    <div><p class = 'lead'><b>653</b></p><i class = 'glyphicon glyphicon-briefcase fa-3x'></i></div><p><b>EMPLOI</b></p>
+                    <div class = 'text-center'><p class = 'lead'><b>203</b></p><i class = 'fa fa-paste fa-2x'></i></div><p style = 'margin-left:38px'><b>PROFILS</b></p>
 
                   </div>
 
                   <div class = 'col-md-2 stat'>
 
-                    <div><p class = 'lead'><b>653</b></p><i class = 'fa fa-building fa-3x'></i></div><p>
+                    <div class = 'text-center'><p class = 'lead'><b>120</b></p><i class = 'fa fa-briefcase fa-2x'></i></div><p style = 'margin-left:40px'><b>EMPLOI</b></p>
+
+                  </div>
+
+                  <div class = 'col-md-2 stat'>
+
+                    <div class = 'text-center'><p class = 'lead'><b>5,486</b></p><i class = 'fa fa-building fa-2x'/></i></div><p style = 'margin-left:-15px'>
                     <b>ENTREPRISES MEMBRES</b></p>
 
                   </div>
 
                   <div class = 'col-md-2 stat'>
-
-                    <div><p class = 'lead'><b>653</b></p><i class = 'fa fa-user fa-3x'></i></div><p><b>CANDIDATS</b></p>
+ 
+                    <div class = 'text-center'><p class = 'lead'><b>7,566</b></p><i class = 'fa fa-user fa-2x'></i></div><p style = 'margin-left:25px'><b>CANDIDATS</b></p>
 
                   </div>
 
                   <div class = 'row formulaire-bas'>
                     
-                    <div class = 'col-md-4 col-md-offset-4'>
+                    <div class = 'col-md-6 col-md-offset-3'>
                       
-                        <h4>Abonnez-vous a notre Newsletter</h4>
-                        <input type = 'text' name = 'abonnement' id = 'abonnement' class = 'form-control' placeholder="Adresse e-mail">
+                        <h1 style = 'margin-left:32px;margin-bottom:0px'>Abonnez-vous a notre Newsletter</h1>
+                        <div class = 'col-md-10'><input type = 'text' name = 'abonnement' id = 'abonnement' class = 'form-control' placeholder="Adresse e-mail" style = 'height:50px;width:550px;margin-top:0px'></div><div class = 'col-md-2'><button class = 'btn btn-default' style = 'border:0px;margin-top:8px;background:transparent;margin-left:-50px'><img src = 'img\Calque2.png'></button></div>
 
                     </div>
 
@@ -147,13 +147,13 @@ session_start();
 
 <section class = 'infinity-job-applications'>
 
-      <div class = 'container'>
+      <div class = 'container-fluid'>
 
               <div class = 'row'>
 
                   <div class = 'col-md-5'>
                     
-                      <img class = 'center-block img-responsive' src = 'img/telephones.png'/>
+                      <img class = 'center-block img-responsive' src = 'img\mobile.png'/>
 
                   </div>
 

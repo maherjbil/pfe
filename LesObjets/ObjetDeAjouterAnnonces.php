@@ -8,7 +8,7 @@
 
   $annonces = new Annonces($_POST['id'],$_POST['domaine'],$_POST['nature']);
   
-  $annonces->setNomAnnonce($_POST['nomAnnonce']);
+  $annonces->setNomAnnonce($_POST['titreAnnonce']);
   
   $annonces->setContenuAnnonce($_POST['contenuAnnonce']);
   

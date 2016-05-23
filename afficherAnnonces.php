@@ -9,7 +9,7 @@
 <body>
 
 
-<nav class = 'nav navbar-fixed-top' role = 'navigation'>
+<nav class = 'nav navbar-fixed-top' role = 'navigation' style = 'border-bottom:1px solid #d5d4d4'>
   
     <div class="navbar-header">
 

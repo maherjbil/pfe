@@ -19,7 +19,7 @@ $_SESSION['nature'] = 'recruteur';
 </head>
 <body>
 
- <nav class = 'nav navbar-fixed-top' role = 'navigation'>
+ <nav class = 'nav navbar-fixed-top' role = 'navigation' style = 'border-bottom:1px solid #d5d4d4'>
   
     <div class="navbar-header">
 
@@ -45,7 +45,7 @@ $_SESSION['nature'] = 'recruteur';
 
 
 
-                              <div class = 'col-md-1 col-md-offset-3'>           
+                              <div class = 'col-md-1 col-md-offset-3' style = 'left:30px'>           
                                       <div class = 'logo'><a href="index.php"><img src = 'img/logo.png'></a></div>
                               </div>
 
@@ -112,13 +112,22 @@ $_SESSION['nature'] = 'recruteur';
                         $gdf = new GenerateurDuFormulaire();
                                       echo $gdf->form("f1","verifDonneesRecruteur.php","post");
 
-                                      	echo "<div class = 'champs-inscription'>";
-                                              echo "<div class = 'col-md-8 col-xs-12 col-md-offset-2'><b>Nom :*</b><span id = 'erreurNom'></span></div><div class = 'col-md-8 col-xs-12 col-md-offset-2'><span class = 'glyphicon glyphicon-user'></span><span class = 'champs-inscription'>".$gdf->input("text","nom","nom","form-control")."</span></div><br/><br/><br/>";
-                                              echo "<div class = 'col-md-8 col-xs-12 col-md-offset-2'><b>Prenom :*</b><span id = 'erreurPrenom'></span></div><br/><div class = 'col-md-8 col-xs-12 col-md-offset-2'><span class = 'glyphicon glyphicon-user'></span>".$gdf->input("text","prenom","prenom","form-control")."</div><br/><br/><br/>";
-                                              echo "<div class = 'col-md-8 col-xs-12 col-md-offset-2'><b>Email :*</b><span id = 'erreurEmail'></span></div><br/><div class = 'col-md-8 col-xs-12 col-md-offset-2'>".$gdf->input("text","Email","Email","form-control")."</div><br/><br/><br/>";
-                                              echo "<div class = 'col-md-8 col-xs-12 col-md-offset-2'><b>Password* :</b><span id = 'erreurPassword'></span></div><br/><div class = 'col-md-8 col-xs-12 col-md-offset-2'>".$gdf->input("password","password","password","form-control")."</div><br/><br/><br/>";
-                                              echo "<div class = 'col-md-8 col-xs-12 col-md-offset-2'><b>Comfirm Password* :</b><span id = 'erreurComfirmation'></span></div><br/><div class = 'col-md-8 col-xs-12 col-md-offset-2'>".$gdf->input("password","comfirmer","comfirmer","form-control")."</div><br/><br/><br/>";
+                                      	echo "<div class = 'champs-inscription col-md-8 col-xs-12 col-md-offset-2' style = 'left:20px'>";
+
+                                              echo "<div><b style = 'margin-left:50px'>Nom</b><span id = 'erreurNom'></span></div><div class = ' col-xs-12'><div class = 'col-xs-1' style = 'border-bottom:1px solid #12a085;padding-bottom:10px;padding-right:10px;margin-top:3px'><span class = 'glyphicon glyphicon-user fa-fw' style = 'color:#2f2928'></span></div><div class = 'col-md-11'>".$gdf->input("text","nom","nom","form-control")."</div></div><br/><br/><br/>";
+
+                                              echo "<div><b style = 'margin-left:50px'>Prenom</b><span id = 'erreurPrenom'></span></div><br/><div class = 'col-xs-12'><div class = 'col-xs-1' style = 'border-bottom:1px solid #12a085;padding-bottom:10px;padding-right:10px;margin-top:3px'><span class = 'glyphicon glyphicon-user fa-fw' style = 'color:#2f2928'></span></div><div class = 'col-md-11'>".$gdf->input("text","prenom","prenom","form-control")."</div></div><br/><br/><br/>";
+
+
+                                              echo "<div><b style = 'margin-left:50px'>Email</b><span id = 'erreurEmail'></span></div><br/><div class = 'col-xs-12'><div class = 'col-xs-1' style = 'border-bottom:1px solid #12a085;padding-bottom:10px;padding-right:10px;margin-top:3px'><i class = 'fa fa-envelope-o fa-fw' style = 'color:#2f2928'></i></div><div class = 'col-md-11'>".$gdf->input("text","Email","Email","form-control")."</div></div><br/><br/><br/>";
+
+                                              echo "<div><b style = 'margin-left:50px'>Password</b><span id = 'erreurPassword'></span></div><br/><div class = 'col-xs-12'><div class = 'col-xs-1' style = 'border-bottom:1px solid #12a085;padding-bottom:7px;padding-right:20px;margin-top:3px'><i class = 'fa fa-unlock' style = 'color:#2f2928;font-size:1.5em'></i></div><div class = 'col-md-11'>".$gdf->input("password","password","password","form-control")."</div></div><br/><br/><br/>";
+
+
+                                              echo "<div><b style = 'margin-left:50px'>Comfirm Password</b><span id = 'erreurComfirmation'></span></div><br/><div class = 'col-xs-12'><div class = 'col-xs-1' style = 'border-bottom:1px solid #12a085;padding-bottom:7px;padding-right:20px;margin-top:3px'><i class = 'fa fa-lock' style = 'color:#2f2928;font-size:1.5em'></i></div><div class = 'col-md-11'>".$gdf->input("password","comfirmer","comfirmer","form-control")."</div></div><br/><br/><br/>";
+
                                               echo $gdf->hidden("nature","recruteur")."<br/>";
+
                                               echo "<div class = 'text-center'>".$gdf->submit("inscription","inscription","sign in","btn btn-default")."</div>";
 
                                         echo "</div>";
