@@ -75,7 +75,6 @@ session_start();
                                                 <button class = 'btn btn-default mes-annonces'><a href = 'afficherAnnoncesPersonnels.php'>Mes annonces</a></button>
                                                 <button class = 'btn btn-default candidatures'><a href = 'afficherCandidats.php'>candidatures</a></button>
                                                 <button class = 'btn btn-default offres-emploi'><a href = 'afficherToutsLesCandidats.php'>Demandes d'emploi</a></button>
-                                                <button class = 'btn btn-default offres'><a href = 'index.php'>Annonces</a></button>
                                                 <button class = 'btn btn-default parametres'><a href = 'formulaireDeModificationDuCompteRecruteur.php'>Parametres</a></button>
                                           </div>";
 

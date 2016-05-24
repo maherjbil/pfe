@@ -75,7 +75,7 @@
 
 
 
-    <section class = 'container-fluid'>
+    <section class = 'container afficherAnnoncePersonnels'>
      
         <?php include("LesObjets/ObjetDeAfficherAnnoncesPersonnels.php"); ?>
      

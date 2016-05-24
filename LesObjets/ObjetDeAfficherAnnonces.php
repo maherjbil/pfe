@@ -8,14 +8,15 @@ session_start();
 
     $gdf = new GenerateurDuFormulaire();
 
-    if(isset($_SESSION['id']) && isset($_SESSION['domaine']) && isset($_SESSION['nature']) && isset($_POST['idAnnonces']) && isset($_GET['idAnnonces'])){
+    if(isset($_SESSION['id']) && isset($_SESSION['domaine']) && isset($_SESSION['nature']) && isset($_GET['idAnnonces'])){
 
 
 
                 $annonces = new Annonces($_SESSION['id'],$_SESSION['domaine'],$_SESSION['nature']);
     
-                $annonces->setIdAnnonces($_POST['idAnnonces']);
                 $annonces->setIdAnnonces($_GET['idAnnonces']);
+
+                $annonces->setIdCandidat($_SESSION['id']);
                         
                         //J'ai utilise deux requetes avec jointure l'une parcourit les deux tables annonces et candidat et l'autre parcourit les tables annonces et recruteur
                         //afain d'eviter le conflit entre les deux tables candidat et recruteur qui ont deux champs communs 'domaine' et 'nature'
@@ -45,22 +46,108 @@ session_start();
 
                                                                                     echo "<div class = 'content-details-annonces'>";
                                                                                          echo "<div>
+                                                                                                    <p class = 'row'>
+                                                                                                        <span class = 'col-md-2'>
+                                                                                                            <img src = 'img\Calque3copie2.png'>
+                                                                                                        </span>
+                                                                                                        <span class = 'col-md-5' style = 'font-weight:bold;color:#989696'>Publiee le : </span>
+                                                                                                        <span class = 'col-md-6' style = 'color:#8ba09c;margin-left:-45px;font-size:0.8em'>".
+                                                                                                            $object1->datePublication.
+                                                                                                        "</span>
+                                                                                                    </p>
 
-                                                                                                    <p class = 'row'><span class = 'col-md-2'><img src = 'img\Calque3copie2.png'></span><span class = 'col-md-9 col-md-offset-1'>Publiee le : ".$object->datePublication."</span></p>
+
+                                                                                                    <p class = 'row'>
+                                                                                                        <span class = 'col-md-2' style = 'margin-left:5px'>
+                                                                                                            <img src = 'img\Calque4copie.png'>
+                                                                                                        </span>
+                                                                                                        <span class = 'col-md-7' style = 'margin-left:-6px;font-weight:bold;color:#989696'>Lieu de travail : </span><span class = 'col-md-3' style = 'color:#8ba09c;font-size:0.8em;margin-left:-65px'>".$object1->regionRecruteur."/".$object1->villeRecruteur."</span>
+                                                                                                    </p>
 
 
-                                                                                                    <p>Lieu de travail : ".$object1->paysRecruteur."/".$object1->regionRecruteur."/<br/>".$object1->villeRecruteur."</p>
-                                                                                                    <p>Experience : Entre 2 et 5 ans</p>
-                                                                                                    <p>Etudes : bac + 2</p>
-                                                                                                    <p>Langue : arabe,francais,anglais</p>
-                                                                                                    <p>Disponibilite : Plein temps</p>
-                                                                                                    <p>Salaire : a discuter</p>
-                                                                                                    <p>Statut de l'emploi : contrat</p>
-                                                                                                    <p>Mobilite : locale,international</p>
-                                                                                                    <p>Email : ".$object1->loginRecruteur."</p>
+                                                                                                    <p class = 'row'>
+                                                                                                        <span class = 'col-md-2'>
+                                                                                                            <img src = 'img\experience.png'>
+                                                                                                        </span>
+                                                                                                        <span class = 'col-md-5' style = 'font-weight:bold;color:#989696'>Experience : </span>
+                                                                                                        <span class = 'col-md-6' style = 'color:#8ba09c;margin-left:-38px;font-size:0.8em'>Entre 2 et 5 ans</span>
+                                                                                                    </p>
+
+
+                                                                                                    <p class = 'row'>
+                                                                                                        <span class = 'col-md-2'>
+                                                                                                            <img src = 'img\etude.png'>
+                                                                                                        </span>
+                                                                                                        <span class = 'col-md-4' style = 'font-weight:bold;color:#989696'>Etudes : </span>
+                                                                                                        <span class = 'col-md-5' style = 'color:#8ba09c;margin-left:-38px;font-size:0.8em'>bac + 2</span>
+                                                                                                    </p>
+
+
+                                                                                                    <p class = 'row'>
+                                                                                                        <span class = 'col-md-2'>
+                                                                                                            <img src = 'img\langue1.png'/>
+                                                                                                        </span>
+                                                                                                        <span class = 'col-md-4' style = 'font-weight:bold;color:#989696'>Langue : </span>
+                                                                                                        <span class = 'col-md-5' style = 'color:#8ba09c;margin-left:-36px;font-size:0.8em'>arabe,francais,anglais</span>
+                                                                                                    </p>
+
+
+                                                                                                    <p class = 'row'>
+                                                                                                        <span class = 'col-md-2'>
+                                                                                                            <i class = 'glyphicon glyphicon-time fa-2x'></i>
+                                                                                                        </span>
+                                                                                                        <span class = 'col-md-6' style = 'font-weight:bold;color:#989696'>Disponibilite : </span>
+                                                                                                        <span class = 'col-md-4' style = 'color:#8ba09c;margin-left:-25px;font-size:0.8em'>Plein temps</span>
+                                                                                                    </p>
+
+
+                                                                                                    <p class = 'row'>
+                                                                                                        <span class = 'col-md-2'>
+                                                                                                            <i class = 'glyphicon glyphicon-usd fa-2x'></i>
+                                                                                                        </span>
+                                                                                                        <span class = 'col-md-4' style = 'font-weight:bold;color:#989696'>Salaire : </span>
+                                                                                                        <span class = 'col-md-5' style = 'color:#8ba09c;margin-left:-38px;font-size:0.8em'>a discuter</span>
+                                                                                                    </p>
+
+
+                                                                                                    <p class = 'row'>
+                                                                                                        <span class = 'col-md-2'><i class = 'fa fa-tag fa-rotate-90 fa-2x'></i>
+                                                                                                        </span>
+                                                                                                        <span class = 'col-md-7' style = 'font-weight:bold;color:#989696'>Statut de l'emploi : </span>
+                                                                                                        <span class = 'col-md-3' style = 'color:#8ba09c;margin-left:-45px;font-size:0.8em'>contrat</span>
+                                                                                                    </p>
+
+
+                                                                                                    <p class = 'row'>
+                                                                                                        <span class = 'col-md-2'>
+                                                                                                            <img src = 'img\voiture.png'>
+                                                                                                        </span>
+                                                                                                        <span class = 'col-md-4' style = 'font-weight:bold;color:#989696'>Mobilite :</span>
+                                                                                                        <span class = 'col-md-5' style = 'color:#8ba09c;margin-left:-33px;font-size:0.8em'>locale,international</span>
+                                                                                                    </p>
+
 
                                                                                                 </div>";
                                                                                     echo "</div>";
+                                                                                        
+
+                                                                                                echo "<div class = 'titre-details-annonce text-center'>
+                                                                                                        <h3>Competances</h3></div>";
+
+                                                                                                echo "<div class = 'content-details-annonces'>";
+                                                                                                echo "<div>
+                                                                                                    <p><i class = 'glyphicon glyphicon-ok fa-fw'></i>Avoir une bonne connaissance des logiciels
+                                                                                                        Microsoft Office (Word, Excel et Outlook).</p>
+                                                                                                    <p><i class = 'glyphicon glyphicon-ok fa-fw'></i>Démontrer un bon esprit d’équipe.</p>
+
+                                                                                                </div>";
+
+
+
+                                                                                    echo "</div>";
+
+
+
                                                                             echo "</div>";
 
                                                                             echo "<div class = 'col-md-9 col-xs-12'>";
@@ -78,16 +165,10 @@ session_start();
                                                                                             echo "<div class = 'titre-paragraphe'>Description de l'annonce : </div>";
                                                                                             echo "<div class = 'paragraphe couleur-lettre'><p>".$object1->contenu."</p></div>";
 
-                                                                        echo $gdf->form("f40","formulaireDePostulation.php","post").$gdf->hidden("id",$annonces->getId()).
+                                                                        echo $gdf->form("f40","formulaireDePostulation.php","post").$gdf->hidden("id",$object1->idRecruteur).
                                                                         $gdf->hidden("domaine",$annonces->getDomaine()).$gdf->hidden("idAnnonces",$annonces->getIdAnnonces()).
-                                                                        $gdf->hidden("idCandidat",$annonces->getIdCandidat()).$gdf->hidden("nature",$annonces->getNature())."<div class = 'text-center btn-postuler'>".$gdf->submit("postuler","postuler","postuler","btn btn-default").$gdf->endForm()."
+                                                                        $gdf->hidden("idCandidat",$_SESSION['id']).$gdf->hidden("nature",$annonces->getNature())."<div class = 'text-center btn-postuler'>".$gdf->submit("postuler","postuler","postuler","btn btn-default").$gdf->endForm()."
                                                                                                       </div>";
-
-                                                                          echo $gdf->form("f44","contact.php","post").$gdf->hidden("idAnnonces",$object1->idAnnonces).
-
-                                                                                $gdf->hidden("idCandidat",$annonces->getIdCandidat()).$gdf->hidden("idRecruteur",$annonces->getId()).
-
-                                                                                $gdf->hidden("domaine",$object1->domaineRecruteur).$gdf->hidden("nature",$annonces->getNature())."<div class = 'text-center'>".$gdf->submit("contacter","contacter","contacter","btn btn-default").$gdf->endForm()."</div>";
 
                                                                                      echo "</div>";
 
@@ -97,25 +178,6 @@ session_start();
 
                                                             echo "</div>";
 
-
-                                                            echo "</div class = 'row aside'>";
-
-                                                                echo "<div class = 'col-md-3 col-xs-12'>";
-
-                                                                                    echo "<div class = 'titre-details-annonce text-center'>
-                                                                                            <h3>Competances</h3></div>";
-
-                                                                                    echo "<div class = 'content-details-annonces'>";
-                                                                                         echo "<div>
-                                                                                                    <p>Avoir une bonne connaissance des logiciels
-                                                                                                        Microsoft Office (Word, Excel et Outlook).</p>
-                                                                                                    <p>Démontrer un bon esprit d’équipe.</p>
-
-                                                                                                </div>";
-                                                                                    echo "</div>";
-
-                                                                 echo "</div>";
-                                                            echo "</div>";
                                                                      
                                         }
                       
@@ -139,7 +201,6 @@ session_start();
 
                 $annonces = new Annonces('null','null','null');
     
-                if(isset($_POST['idAnnonces'])){ $annonces->setIdAnnonces($_POST['idAnnonces']); }
                 if(isset($_GET['idAnnonces'])){ $annonces->setIdAnnonces($_GET['idAnnonces']); }
                         
                         //J'ai utilise deux requetes avec jointure l'une parcourit les deux tables annonces et candidat et l'autre parcourit les tables annonces et recruteur
@@ -185,13 +246,13 @@ session_start();
                                                                                                         <span class = 'col-md-2' style = 'margin-left:5px'>
                                                                                                             <img src = 'img\Calque4copie.png'>
                                                                                                         </span>
-                                                                                                        <span class = 'col-md-7' style = 'margin-left:-6px;font-weight:bold;color:#989696'>Lieu de travail : </span><br/><span class = 'col-md-5' style = 'color:#8ba09c;font-size:0.8em'>".$object1->paysRecruteur."/".$object1->regionRecruteur."/<br/>".$object1->villeRecruteur."</span>
+                                                                                                        <span class = 'col-md-7' style = 'margin-left:-6px;font-weight:bold;color:#989696'>Lieu de travail : </span><span class = 'col-md-3' style = 'color:#8ba09c;font-size:0.8em;margin-left:-65px'>".$object1->regionRecruteur."/".$object1->villeRecruteur."</span>
                                                                                                     </p>
 
 
                                                                                                     <p class = 'row'>
                                                                                                         <span class = 'col-md-2'>
-                                                                                                            <img src = 'img\sac1.png'>
+                                                                                                            <img src = 'img\experience.png'>
                                                                                                         </span>
                                                                                                         <span class = 'col-md-5' style = 'font-weight:bold;color:#989696'>Experience : </span>
                                                                                                         <span class = 'col-md-6' style = 'color:#8ba09c;margin-left:-38px;font-size:0.8em'>Entre 2 et 5 ans</span>
@@ -200,7 +261,7 @@ session_start();
 
                                                                                                     <p class = 'row'>
                                                                                                         <span class = 'col-md-2'>
-                                                                                                            <i class = 'fa fa-mortar-board fa-2x'></i>
+                                                                                                            <img src = 'img\etude.png'/>
                                                                                                         </span>
                                                                                                         <span class = 'col-md-4' style = 'font-weight:bold;color:#989696'>Etudes : </span>
                                                                                                         <span class = 'col-md-5' style = 'color:#8ba09c;margin-left:-38px;font-size:0.8em'>bac + 2</span>
@@ -209,7 +270,7 @@ session_start();
 
                                                                                                     <p class = 'row'>
                                                                                                         <span class = 'col-md-2'>
-                                                                                                            <i class = 'fa fa-language fa fa-2x'></i>
+                                                                                                            <img src = 'img\langue1.png'/>
                                                                                                         </span>
                                                                                                         <span class = 'col-md-4' style = 'font-weight:bold;color:#989696'>Langue : </span>
                                                                                                         <span class = 'col-md-5' style = 'color:#8ba09c;margin-left:-36px;font-size:0.8em'>arabe,francais,anglais</span>
@@ -220,8 +281,8 @@ session_start();
                                                                                                         <span class = 'col-md-2'>
                                                                                                             <i class = 'glyphicon glyphicon-time fa-2x'></i>
                                                                                                         </span>
-                                                                                                        <span class = 'col-md-5' style = 'font-weight:bold;color:#989696'>Disponibilite : </span>
-                                                                                                        <span class = 'col-md-5' style = 'color:#8ba09c;margin-left:-25px;font-size:0.8em'>Plein temps</span>
+                                                                                                        <span class = 'col-md-6' style = 'font-weight:bold;color:#989696'>Disponibilite : </span>
+                                                                                                        <span class = 'col-md-4' style = 'color:#8ba09c;margin-left:-25px;font-size:0.8em'>Plein temps</span>
                                                                                                     </p>
 
 
@@ -298,9 +359,9 @@ session_start();
                                                             
 
 
-                                                                        echo $gdf->form("f40","formulaireDePostulation.php","post").$gdf->hidden("id",$annonces->getId()).
+                                                                        echo $gdf->form("f40","formulaireDePostulation.php","post").$gdf->hidden("id",$object1->idRecruteur).
                                                                         $gdf->hidden("domaine",$annonces->getDomaine()).$gdf->hidden("idAnnonces",$annonces->getIdAnnonces()).
-                                                                        $gdf->hidden("idCandidat",$annonces->getIdCandidat()).$gdf->hidden("nature",$annonces->getNature())."<div class = 'text-center btn-postuler'>".$gdf->submit("postuler","postuler","postuler","btn btn-default").$gdf->endForm()."
+                                                                        $gdf->hidden("idCandidat",$annonces->getId()).$gdf->hidden("nature",$annonces->getNature())."<div class = 'text-center btn-postuler'>".$gdf->submit("postuler","postuler","postuler","btn btn-default").$gdf->endForm()."
                                                                                                       </div>";
 
                                                                                      echo "</div>";

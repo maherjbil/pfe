@@ -25,7 +25,7 @@
   }
   else{
   
-    header("location:formulaireDePostulation.php?reponse=false");
+      header("location:formulaireDePostulation.php?reponse=false");
   
   }
 

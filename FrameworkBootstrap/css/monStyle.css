@@ -191,7 +191,7 @@ div.description-annonces{
     padding-top:50px;
     padding-bottom:50px;
     background-color:#ebfceb;
-    height:878px;
+    height:825px;
 
 }
 div.titre-description-annonces h4{
@@ -464,11 +464,12 @@ div.formulaire-recherche-personnalisee{
     padding-top:20px;
     padding-bottom:20px;
     padding-left:145px;
+    margin-bottom:15px;
 
 }
 div.offre-a-la-une,div.offres-recents{
 
-    margin-bottom:40px;
+    margin-bottom:2px;
 
 }
 div.formulaire-recherche-personnalisee input,div.formulaire-recherche-personnalisee select{
@@ -500,17 +501,45 @@ div.rubrique{
     margin-bottom:5px;
     background-color:#ffffff;
     padding-top:10px;
-    padding-bottom:10px;
+    padding-bottom:20px;
     padding-right:30px;
-    height:80px;
+    height: 78px;
 
 }
+div.rubrique-afficherCandidats{
+
+    margin-bottom:5px;
+    background-color:#ffffff;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:30px;
+    height:180px;
+
+}
+div.rubrique-afficherCandidats img{
+
+    height:150px;
+    margin-top:4px;
+
+}
+div.rubrique-afficherCandidats input{
+
+    margin-top:70px;
+
+}
+
 div.rubrique i.fa-map-marker{
 
     color:#16a085;
 
 }
-b.titreAnnonce:hover,b.nomRecruteur:hover{
+span.titreAnnonce,span.nomRecruteur{
+
+    font-family:Myriad Pro;
+    font-style:regular;
+
+}
+span.titreAnnonce:hover,span.nomRecruteur:hover{
 
     color:#16a085;
 
@@ -835,4 +864,19 @@ div.contenu-details-compte{
 }
 
 /*fin de la page afficherCompteRecruteur*/
+
+
+
+/*debut de la page afficherAnnoncesPersonnels*/
+
+section.afficherAnnoncePersonnels{
+
+    background-color:#ebfceb;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:50px;
+
+}
+
+/*fin de la page afficherAnnoncesPersonnels*/
 

@@ -113,6 +113,7 @@ if(isset($_POST['idAnnonces']) && isset($_POST['idCandidat']) && isset($_POST['i
   
   $gdf = new GenerateurDuFormulaire();
 
+
   if(!isset($_SESSION['login']) && !isset($_SESSION['password'])){
 
       header("location:connexion.php?result=false");
